@@ -1,0 +1,6 @@
+description: Should use variable
+project: project
+asserts:
+  - test: "jobs.job.stdout.includes('Hello GitLab')"
+---
+VARIABLE: GitLab

@@ -1,0 +1,54 @@
+{
+  "name": "gitlab-ci-test",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Testing GitLab CI pipelines locally",
+  "main": "src/index.js",
+  "bin": "bin.js",
+  "files": [
+    "src"
+  ],
+  "author": "",
+  "license": "LGPL-3.0-or-later",
+  "scripts": {
+    "start": "node bin.js",
+    "build": "echo 'No build step'",
+    "test": "run-s test:* --",
+    "test:lint": "eslint .",
+    "test:format": "prettier --check .",
+    "format": "prettier --write .",
+    "coverage": "c8 npm start test/*.test.*"
+  },
+  "dependencies": {
+    "gitlab-ci-local": "^4.57.0",
+    "mocha": "^11.1.0",
+    "chai": "^5.1.2"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.13.1",
+    "c8": "^10.1.3",
+    "eslint": "^9.20.0",
+    "eslint-config-prettier": "^10.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/to-be-continuous/tools/gitlab-ci-test.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/to-be-continuous/tools/gitlab-ci-test/issues"
+  },
+  "homepage": "https://gitlab.com/to-be-continuous/tools/gitlab-ci-test",
+  "keywords": [
+    "gitlab",
+    "pipeline",
+    "local",
+    "test",
+    "validator"
+  ],
+  "prettier": {
+    "semi": false
+  }
+}

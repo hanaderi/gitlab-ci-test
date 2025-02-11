@@ -1,0 +1,10 @@
+description: Should succeed to print Hello world
+project: project
+asserts:
+  - test: success
+  - test: run_jobs.length == 1
+  - test: run_jobs[0] == 'job'
+  - test: "jobs.job.stdout.includes('Hello world')"
+  - test: jobs.job.artifacts.exists('output.txt')
+---
+# no variables
