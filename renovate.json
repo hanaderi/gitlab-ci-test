@@ -1,0 +1,34 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":dependencyDashboard"],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "groupName": "npm outdated",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "tbc templates",
+      "matchPackageNames": ["to-be-continuous/*"]
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["\\.gitlab-ci\\.ya?ml$"],
+      "matchStrings": [
+        "\\s?_IMAGE:\\s['\"](?<registryUrls>.*?)\\/(?<depName>.*?):(?<currentValue>.*)['\"]"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["\\.gitlab-ci\\.ya?ml$"],
+      "matchStrings": [
+        "\\s?image:\\s['\"](?<registryUrls>.*?)\\/(?<depName>.*?):(?<currentValue>.*)['\"]"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ]
+}
