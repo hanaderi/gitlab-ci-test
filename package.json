@@ -9,7 +9,7 @@
     "src"
   ],
   "author": "",
-  "license": "LGPL-3.0-or-later",
+  "license": "MIT",
   "scripts": {
     "start": "node bin.js",
     "build": "echo 'No build step'",
