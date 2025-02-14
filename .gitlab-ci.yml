@@ -1,9 +1,9 @@
 include:
   # Node.js template
-  - component: "$CI_SERVER_FQDN/to-be-continuous/node/gitlab-ci-node@4.2"
+  - component: "$CI_SERVER_FQDN/to-be-continuous/node/gitlab-ci-node@4"
     inputs:
       publish-enabled: true
   # Docker template
-  - component: "$CI_SERVER_FQDN/to-be-continuous/docker/gitlab-ci-docker@6.1"
+  - component: "$CI_SERVER_FQDN/to-be-continuous/docker/gitlab-ci-docker@6"
   # Semantic-release template
-  - component: "$CI_SERVER_FQDN/to-be-continuous/semantic-release/gitlab-ci-semrel@3.13"
+  - component: "$CI_SERVER_FQDN/to-be-continuous/semantic-release/gitlab-ci-semrel@3"
