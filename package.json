@@ -21,7 +21,7 @@
     "prepare": "husky || true"
   },
   "dependencies": {
-    "chai": "^5.1.2",
+    "chai": "^6.0.0",
     "gitlab-ci-local": "^4.57.0",
     "mocha": "^11.1.0"
   },
