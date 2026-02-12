@@ -1,0 +1,21 @@
+diff --git a/node_modules/gitlab-ci-local/src/job.js b/node_modules/gitlab-ci-local/src/job.js
+--- a/node_modules/gitlab-ci-local/src/job.js
++++ b/node_modules/gitlab-ci-local/src/job.js
+@@ -1016,7 +1016,7 @@
+                 paths += " " + Utils.expandText(path, expanded).replace(`${expanded.CI_PROJECT_DIR}/`, "");
+             }
+             time = process.hrtime();
+-            let cmd = "shopt -s globstar nullglob dotglob\n";
++            let cmd = "";
+             cmd += `mkdir -p ${cachePath}/${cacheName}\n`;
+             cmd += `rsync -Ra ${paths} ${cachePath}/${cacheName}/. || true\n`;
+             await Mutex.exclusive(cacheName, async () => {
+@@ -1070,7 +1070,7 @@
+             artifactsPath = "../../artifacts";
+         }
+         let time, endTime;
+-        let cpCmd = "shopt -s globstar nullglob dotglob\n";
++        let cpCmd = "";
+         cpCmd += `mkdir -p ${artifactsPath}/${safeJobName}\n`;
+         cpCmd += "rsync --exclude '.gitlab-ci-local/**' -Ra ";
+         for (const artifactExcludePath of this.artifacts?.exclude ?? []) {

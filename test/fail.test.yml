@@ -1,0 +1,6 @@
+description: Should fail with invalid pipeline
+project: invalid
+asserts:
+  - test: "run_jobs.length == 0"
+---
+# no variables

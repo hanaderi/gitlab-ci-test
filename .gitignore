@@ -1,0 +1,6 @@
+node_modules
+.gitlab-ci-local
+test/**/output.txt
+.nyc_output
+coverage
+reports

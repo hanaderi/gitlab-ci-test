@@ -1,0 +1,7 @@
+job:
+  script:
+    - echo "Hello $VARIABLE"
+    - echo "Hello $VARIABLE" > output.txt
+  artifacts:
+    paths:
+      - output.txt
